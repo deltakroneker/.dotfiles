@@ -26,6 +26,6 @@ fi
 # Personal aliases
 alias showFiles="defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/Core"
 alias hideFiles="defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/Core"
-alias l="ls -la"
-alias d='dirs -v | head -10'
+alias l="ls -l"
+alias ll="ls -la"
 alias f="bundle exec fastlane"
