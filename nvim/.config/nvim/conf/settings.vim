@@ -12,10 +12,15 @@ set clipboard+=unnamedplus
 nnoremap <leader>w :up<CR>
 map <leader>d $
 map <leader>p %
+nmap <leader>q :q
 nnoremap va :%y+<CR>
 vnoremap < <gv
 vnoremap > >gv
 nmap <leader>s ysiw
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 " d is delete, leader d is cut (https://github.com/pazams/d-is-for-delete)
 nnoremap x "_x
@@ -49,12 +54,11 @@ let g:airline#extensions#tabline#right_alt_sep = ''
 set showtabline=2
 set noshowmode
 
-" FZF
-let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
-let $FZF_DEFAULT_COMMAND="rg --files --hidden"
-map <leader>f :GFiles<CR>
-map <leader>b :Buffers<CR>
-nnoremap <leader>g :Rg<CR>
+" Telescope settings
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
 " Disabling arrow keys
  no <down> <Nop>
@@ -220,3 +224,12 @@ require('gitsigns').setup {
   use_internal_diff = true,  -- If luajit is present
 }
 EOF
+
+nnoremap <C-n> :NvimTreeToggle<CR>
+nnoremap <leader>r :NvimTreeRefresh<CR>
+nnoremap <leader>n :NvimTreeFindFile<CR>
+
+set termguicolors " this variable must be enabled for colors to be applied properly
+
+" a list of groups can be found at `:help nvim_tree_highlight`
+highlight NvimTreeFolderIcon guibg=blue
