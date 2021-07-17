@@ -13,3 +13,7 @@
     sl = shortlog
 	bla = branch -la
 	f = fetch
+[push]
+	default = current
+[pull]
+	ff = only

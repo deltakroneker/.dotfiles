@@ -29,8 +29,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'airblade/vim-rooter'
 	" Markdown preview
 	Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-	
-	"" seoul256 theme
-    Plug 'junegunn/seoul256.vim'
+	" LSP
+	Plug 'neovim/nvim-lspconfig'
+	Plug 'hrsh7th/nvim-compe'
 
+	" seoul256 theme
+    Plug 'junegunn/seoul256.vim'
+	" Embark theme
+	Plug 'embark-theme/vim', { 'as': 'embark' }
 call plug#end()

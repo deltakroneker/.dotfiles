@@ -28,4 +28,19 @@ alias showFiles="defaults write com.apple.finder AppleShowAllFiles YES; killall 
 alias hideFiles="defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/Core"
 alias l="ls -l"
 alias ll="ls -la"
+alias lt="tree -dirsfirst"
 alias f="bundle exec fastlane"
+alias vim="nvim"
+alias vi="nvim"
+
+# Variables 
+#export FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD=iyvtnyijkgqesfxo
+
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/terraform terraform
+
+timezsh() {
+  shell=${1-$SHELL}
+  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
+}
