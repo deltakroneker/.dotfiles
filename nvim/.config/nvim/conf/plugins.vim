@@ -18,9 +18,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'preservim/nerdcommenter'
     " Vim sneak - navigation with s{char}{char}
     Plug 'justinmk/vim-sneak'
-    " Git gutter - git diff in status column
-    Plug 'airblade/vim-gitgutter'
-    " Airline 
+	Plug 'nvim-lua/plenary.nvim'
+	Plug 'lewis6991/gitsigns.nvim'
+	" Airline 
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
 	" Fzf
