@@ -33,10 +33,6 @@ alias f="bundle exec fastlane"
 alias vim="nvim"
 alias vi="nvim"
 
-# Variables 
-#export FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD=iyvtnyijkgqesfxo
-
-
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
 

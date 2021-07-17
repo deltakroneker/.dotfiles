@@ -1,3 +1,5 @@
+let mapleader = ","
+
 " General settings
 set number
 set relativenumber
@@ -6,8 +8,33 @@ set tabstop=4
 set shiftwidth=4
 set clipboard+=unnamedplus
 
+" Custom mappings
+nnoremap <space> :up<CR>
+map <leader>d $
+map <leader>p %
+nnoremap va :%y+<CR>
 vnoremap < <gv
 vnoremap > >gv
+nmap <leader>s ysiw
+
+" d is delete, leader d is cut (https://github.com/pazams/d-is-for-delete)
+nnoremap x "_x
+nnoremap X "_X
+nnoremap d "_d
+nnoremap D "_D
+vnoremap d "_d
+
+if has('unnamedplus')
+  set clipboard=unnamed,unnamedplus
+  nnoremap <leader>d "+d
+  nnoremap <leader>D "+D
+  vnoremap <leader>d "+d
+else
+  set clipboard=unnamed
+  nnoremap <leader>d "*d
+  nnoremap <leader>D "*D
+  vnoremap <leader>d "*d
+endif
 
 " NERD commenter settings
 let g:NERDSpaceDelims = 1
