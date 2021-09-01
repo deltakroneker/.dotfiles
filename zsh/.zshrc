@@ -30,8 +30,10 @@ alias l="ls -l"
 alias ll="ls -la"
 alias lt="tree -dirsfirst"
 alias f="bundle exec fastlane"
-alias vim="nvim"
-alias vi="nvim"
+#alias vim="nvim"
+#alias vi="nvim"
+alias vimdiff='nvim -d'
+alias t=task
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform

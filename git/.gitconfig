@@ -8,12 +8,29 @@
 	br = branch
 	df = diff
 	dfs = diff --staged
+	dft = difftool
+	dfts = difftool --staged
 	logg = log --graph --decorate --oneline --abbrev-commit --all
 	lg = logg
-    sl = shortlog
+	sl = shortlog
 	bla = branch -la
 	f = fetch
+	rpo = remote prune origin
 [push]
 	default = current
 [pull]
 	ff = only
+
+[diff]
+    tool = nvimdiff
+[difftool]
+    prompt = false
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+
+[merge]
+  tool = vimdiff
+[mergetool]
+  prompt = false
+[mergetool "vimdiff"]
+  cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
