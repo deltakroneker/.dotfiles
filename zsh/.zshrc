@@ -34,6 +34,7 @@ alias f="bundle exec fastlane"
 #alias vi="nvim"
 alias vimdiff='nvim -d'
 alias t=task
+alias tf=terraform
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
