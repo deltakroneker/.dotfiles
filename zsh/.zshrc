@@ -1,4 +1,5 @@
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/opt/postgresql@12/bin:$PATH
+export PATH=/usr/local/lib/ruby:$PATH
+# export PATH=/usr/local/lib/ruby/gems/3.0.0/bin:$HOME/bin:/usr/local/bin:/usr/local/opt/postgresql@12/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -43,3 +44,7 @@ timezsh() {
   shell=${1-$SHELL}
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+
+export NVM_DIR="/Users/nikolamilic/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

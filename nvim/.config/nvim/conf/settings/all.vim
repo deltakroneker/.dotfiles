@@ -1,46 +1,3 @@
-let mapleader = "\<Space>"
-
-" General settings
-set number
-set relativenumber
-syntax on
-set tabstop=4
-set shiftwidth=4
-set clipboard+=unnamedplus
-
-" Custom mappings
-nnoremap <leader>w :up<CR>
-map <leader>d $
-map <leader>p %
-nmap <leader>q :q
-nnoremap va :%y+<CR>
-vnoremap < <gv
-vnoremap > >gv
-nmap <leader>s ysiw
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-
-" d is delete, leader d is cut (https://github.com/pazams/d-is-for-delete)
-nnoremap x "_x
-nnoremap X "_X
-nnoremap d "_d
-nnoremap D "_D
-vnoremap d "_d
-
-if has('unnamedplus')
-  set clipboard=unnamed,unnamedplus
-  nnoremap <leader>d "+d
-  nnoremap <leader>D "+D
-  vnoremap <leader>d "+d
-else
-  set clipboard=unnamed
-  nnoremap <leader>d "*d
-  nnoremap <leader>D "*D
-  vnoremap <leader>d "*d
-endif
-
 " NERD commenter settings
 let g:NERDSpaceDelims = 1
 let g:NERDTrimTrailingWhitespace = 1
@@ -59,16 +16,6 @@ nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
-
-" Disabling arrow keys
- no <down> <Nop>
- no <up> <Nop>
- no <left> <Nop>
- no <right> <Nop>
- ino <down> <Nop>
- ino <up> <Nop>
- ino <left> <Nop>
- ino <right> <Nop>
 
  " Airline settings
  nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
@@ -221,10 +168,6 @@ EOF
 nnoremap <C-n> :NvimTreeToggle<CR>
 nnoremap <leader>r :NvimTreeRefresh<CR>
 nnoremap <leader>n :NvimTreeFindFile<CR>
-
-
-
-set termguicolors " this variable must be enabled for colors to be applied properly
 
 " a list of groups can be found at `:help nvim_tree_highlight`
 highlight NvimTreeFolderIcon guibg=blue
